@@ -1,0 +1,74 @@
+<routes>
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="13.89" guiShape="passenger"/>
+    <vType id="pedestrian" vClass="pedestrian" accel="1.3" decel="1.5" sigma="0.5" length="0.25" minGap="0.5" maxSpeed="1.5" guiShape="pedestrian"/>
+
+    <!-- 定义车辆路线 -->
+    <route id="s_e" edges="E7 -E6"/>
+    <route id="s_n" edges="E7 -E5"/>
+    <route id="s_w" edges="E7 -E4"/>
+    <route id="n_e" edges="E5 -E6"/>
+    <route id="n_s" edges="E5 -E7"/>
+    <route id="n_w" edges="E5 -E4"/>
+    <route id="e_n" edges="E6 -E5"/>
+    <route id="e_s" edges="E6 -E7"/>
+    <route id="e_w" edges="E6 -E4"/>
+    <route id="w_n" edges="E4 -E5"/>
+    <route id="w_s" edges="E4 -E7"/>
+    <route id="w_e" edges="E4 -E6"/>
+
+    <!-- 车辆流 -->
+   <!-- Vehicle Flows -->
+<flow id="vehicleFlow1" type="car" begin="1" end="3600" period="31" from="E7" to="-E5" route="s_n"/>
+<flow id="vehicleFlow2" type="car" begin="1" end="3600" period="33" from="E7" to="-E4" route="s_w"/>
+<flow id="vehicleFlow3" type="car" begin="1" end="3600" period="32" from="E7" to="-E6" route="s_e"/>
+<flow id="vehicleFlow4" type="car" begin="1" end="3600" period="34" from="E5" to="-E6" route="n_e"/>
+<flow id="vehicleFlow5" type="car" begin="1" end="3600" period="29" from="E5" to="-E7" route="n_s"/>
+<flow id="vehicleFlow6" type="car" begin="1" end="3600" period="33" from="E5" to="-E4" route="n_w"/>
+<flow id="vehicleFlow7" type="car" begin="1" end="3600" period="33" from="E6" to="-E5" route="e_n"/>
+<flow id="vehicleFlow8" type="car" begin="1" end="3600" period="32" from="E6" to="-E7" route="e_s"/>
+<flow id="vehicleFlow9" type="car" begin="1" end="3600" period="31" from="E6" to="-E4" route="e_w"/>
+<flow id="vehicleFlow10" type="car" begin="1" end="3600" period="32" from="E4" to="-E5" route="w_n"/>
+<flow id="vehicleFlow11" type="car" begin="1" end="3600" period="30" from="E4" to="-E7" route="w_s"/>
+<flow id="vehicleFlow12" type="car" begin="1" end="3600" period="33" from="E4" to="-E6" route="w_e"/>
+
+<!-- Person Flows -->
+<personFlow id="personFlow1" begin="1" end="3600" period="23">
+    <walk from="E7" to="-E5"/>  <!-- shu -->
+</personFlow>
+<personFlow id="personFlow2" begin="1" end="3600" period="22">
+    <walk from="E7" to="-E4"/>  <!-- from s_n to s_w -->
+</personFlow>
+<personFlow id="personFlow3" begin="1" end="3600" period="22">
+    <walk from="E7" to="-E6"/>  <!-- from s_w to n_e -->
+</personFlow>
+<personFlow id="personFlow4" begin="1" end="3600" period="24">
+    <walk from="E5" to="-E6"/>  <!-- from n_e to n_s -->
+</personFlow>
+<personFlow id="personFlow5" begin="1" end="3600" period="25">
+    <walk from="E5" to="-E7"/>  <!-- shu -->
+</personFlow>
+<personFlow id="personFlow6" begin="1" end="3600" period="23">
+    <walk from="E5" to="-E4"/>  <!-- from n_w to e_n -->
+</personFlow>
+<personFlow id="personFlow7" begin="1" end="3600" period="24">
+    <walk from="E6" to="-E5"/>  <!-- from e_n to e_s -->
+</personFlow>
+<personFlow id="personFlow8" begin="1" end="3600" period="23">
+    <walk from="E6" to="-E7"/>  <!-- from e_s to e_w -->
+</personFlow>
+<personFlow id="personFlow9" begin="1" end="3600" period="23">
+    <walk from="E6" to="-E4"/>  <!-- heng -->
+</personFlow>
+<personFlow id="personFlow10" begin="1" end="3600" period="23">
+    <walk from="E4" to="-E5"/>  <!-- from w_n to s_e -->
+</personFlow>
+<personFlow id="personFlow11" begin="1" end="3600" period="21">
+    <walk from="E4" to="-E7"/>  <!-- from w_n to s_e, adjusted for extra routes -->
+</personFlow>
+<personFlow id="personFlow12" begin="1" end="3600" period="24">
+    <walk from="E4" to="-E6"/>  <!-- heng -->
+</personFlow>
+
+
+
+</routes>

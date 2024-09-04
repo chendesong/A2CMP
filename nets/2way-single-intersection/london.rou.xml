@@ -1,0 +1,63 @@
+<routes>
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="13.89" guiShape="passenger"/>
+    <vType id="pedestrian" vClass="pedestrian" accel="1.3" decel="1.5" sigma="0.5" length="0.25" minGap="0.5" maxSpeed="1.5" guiShape="pedestrian"/>
+
+    <!-- 定义车辆路线 -->
+    <route id="y_s" edges="B3A3 A3A4"/>
+    <route id="y_x" edges="B3A3 A3A2"/>
+    <route id="s_x" edges="A4A3 A3A2"/>
+    <route id="x_s" edges="A2A3 A3A4"/>
+  
+
+    <!-- 第一个阶段：前20分钟 -->
+    <!-- 车辆流 -->
+    <flow id="vehicleFlow1_1" type="car" begin="1" end="1200" period="35.5" from="B3A3" to="A3A4" route="y_s"/>
+    <flow id="vehicleFlow2_1" type="car" begin="1" end="1200" period="37.5" from="B3A3" to="A3A2" route="y_x"/>
+    <flow id="vehicleFlow3_1" type="car" begin="1" end="1200" period="37" from="A4A3" to="A3A2" route="s_x"/>
+    <flow id="vehicleFlow4_1" type="car" begin="1" end="1200" period="39" from="A2A3" to="A3A4" route="x_s"/>
+ 
+
+    <!-- 行人流 -->
+    <personFlow id="personFlow1_1" begin="1" end="1200" period="29.5">
+        <walk from="B3A3" to="A3A4"/>
+    </personFlow>
+    <personFlow id="personFlow2_1" begin="1" end="1200" period="27">
+        <walk from="B3A3" to="A4A3"/>
+    </personFlow>
+
+
+    <!-- 第二阶段：中间20分钟 -->
+    <!-- 车辆流 -->
+<flow id="vehicleFlow1_2" type="car" begin="1201" end="2400" period="22.5" from="A4A3" to="A3A4" route="s_x"/>
+<flow id="vehicleFlow2_2" type="car" begin="1201" end="2400" period="25" from="A2A3" to="A3A2" route="x_s"/>
+<flow id="vehicleFlow3_2" type="car" begin="1201" end="2400" period="24" from="B3A3" to="A3A2" route="y_x"/>
+<flow id="vehicleFlow4_2" type="car" begin="1201" end="2400" period="26" from="B3A3" to="A3A4" route="y_s"/>
+
+<!-- 行人流 -->
+<personFlow id="personFlow1_2" begin="1201" end="2400" period="22.5">
+    <walk from="B3A3" to="A3A4"/>
+</personFlow>
+<personFlow id="personFlow2_2" begin="1201" end="2400" period="20.5">
+    <walk from="B3A3" to="A4A3"/>
+</personFlow>
+
+ 
+
+  <!-- 第三阶段：后20分钟 -->
+<!-- 车辆流 -->
+<flow id="vehicleFlow1_3" type="car" begin="2401" end="3600" period="35.5" from="A4A3" to="A3A4" route="s_x"/>
+<flow id="vehicleFlow2_3" type="car" begin="2401" end="3600" period="37.5" from="A2A3" to="A3A2" route="x_s"/>
+<flow id="vehicleFlow3_3" type="car" begin="2401" end="3600" period="37" from="B3A3" to="A3A2" route="y_x"/>
+<flow id="vehicleFlow4_3" type="car" begin="2401" end="3600" period="39" from="B3A3" to="A3A4" route="y_s"/>
+
+<!-- 行人流 -->
+<personFlow id="personFlow1_3" begin="2401" end="3600" period="29.5">
+    <walk from="B3A3" to="A3A4"/>
+</personFlow>
+<personFlow id="personFlow2_3" begin="2401" end="3600" period="27">
+    <walk from="B3A3" to="A4A3"/>
+</personFlow>
+
+
+  
+</routes>

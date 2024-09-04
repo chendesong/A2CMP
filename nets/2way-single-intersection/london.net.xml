@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-08-28 16:56:55 by Eclipse SUMO netedit Version 1.19.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="E:\Eco-Light-bachelor\nets\2way-single-intersection\london.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="E:\Eco-Light-bachelor\nets\2way-single-intersection\london.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="0"/>
+    </processing>
+
+    <junctions>
+        <no-internal-links value="false"/>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="0"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<net version="1.16" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,200.00,100.00,400.00" origBoundary="0.00,0.00,400.00,400.00" projParameter="!"/>
+
+    <edge id=":A2_0" function="internal">
+        <lane id=":A2_0_0" index="0" speed="3.65" length="4.67" shape="-1.60,200.00 -0.80,198.80 0.00,198.40 0.80,198.80 1.60,200.00"/>
+    </edge>
+    <edge id=":A3_0" function="internal">
+        <lane id=":A3_0_0" index="0" disallow="pedestrian" speed="13.89" length="9.20" shape="-1.60,307.20 -1.60,298.00"/>
+    </edge>
+    <edge id=":A3_1" function="internal">
+        <lane id=":A3_1_0" index="0" disallow="pedestrian" speed="6.51" length="4.75" shape="7.20,301.60 4.75,301.95 3.00,303.00 2.88,303.20"/>
+    </edge>
+    <edge id=":A3_2" function="internal">
+        <lane id=":A3_2_0" index="0" disallow="pedestrian" speed="6.92" length="10.35" shape="7.20,301.60 3.35,301.38 0.60,300.70 -1.05,299.58 -1.60,298.00"/>
+    </edge>
+    <edge id=":A3_4" function="internal">
+        <lane id=":A3_4_0" index="0" disallow="pedestrian" speed="6.51" length="4.28" shape="2.88,303.20 1.95,304.75 1.60,307.20"/>
+    </edge>
+    <edge id=":A3_3" function="internal">
+        <lane id=":A3_3_0" index="0" disallow="pedestrian" speed="13.89" length="9.20" shape="1.60,298.00 1.60,307.20"/>
+    </edge>
+    <edge id=":A3_c0" function="crossing" crossingEdges="A3A4 A4A3">
+        <lane id=":A3_c0_0" index="0" allow="pedestrian" speed="2.78" length="6.40" width="4.00" shape="3.20,305.20 -3.20,305.20"/>
+    </edge>
+    <edge id=":A3_w0" function="walkingarea">
+        <lane id=":A3_w0_0" index="0" allow="pedestrian" speed="2.78" length="6.98" width="4.00" shape="3.20,298.00 0.00,298.00 -3.20,298.00 -5.20,307.20 -3.20,307.20 -2.91,305.00 -2.04,303.20 -0.60,301.80 1.42,300.80 4.02,300.20"/>
+    </edge>
+    <edge id=":A3_w1" function="walkingarea">
+        <lane id=":A3_w1_0" index="0" allow="pedestrian" speed="2.78" length="3.53" width="4.00" shape="3.20,307.20 5.20,307.20 7.20,305.20 7.20,303.20 5.98,303.31 4.98,303.64 4.20,304.20 3.64,304.98 3.31,305.98"/>
+    </edge>
+    <edge id=":A4_w0" function="walkingarea">
+        <lane id=":A4_w0_0" index="0" allow="pedestrian" speed="2.78" length="8.40" width="2.00" shape="-3.20,400.00 -5.20,400.00 5.20,400.00 3.20,400.00"/>
+    </edge>
+
+    <edge id="A2A3" from="A2" to="A3" priority="-1">
+        <lane id="A2A3_0" index="0" speed="13.89" length="98.00" shape="1.60,200.00 1.60,298.00"/>
+    </edge>
+    <edge id="A3A2" from="A3" to="A2" priority="-1">
+        <lane id="A3A2_0" index="0" speed="13.89" length="98.00" shape="-1.60,298.00 -1.60,200.00"/>
+    </edge>
+    <edge id="A3A4" from="A3" to="A4" priority="-1">
+        <lane id="A3A4_0" index="0" allow="pedestrian" speed="13.89" length="92.80" width="2.00" shape="4.20,307.20 4.20,400.00"/>
+        <lane id="A3A4_1" index="1" disallow="pedestrian" speed="13.89" length="92.80" shape="1.60,307.20 1.60,400.00"/>
+    </edge>
+    <edge id="A4A3" from="A4" to="A3" priority="-1">
+        <lane id="A4A3_0" index="0" allow="pedestrian" speed="13.89" length="92.80" width="2.00" shape="-4.20,400.00 -4.20,307.20"/>
+        <lane id="A4A3_1" index="1" disallow="pedestrian" speed="13.89" length="92.80" shape="-1.60,400.00 -1.60,307.20"/>
+    </edge>
+    <edge id="B3A3" from="B3" to="A3" priority="-1">
+        <lane id="B3A3_0" index="0" allow="pedestrian" speed="13.89" length="92.80" width="2.00" shape="100.00,304.20 7.20,304.20"/>
+        <lane id="B3A3_1" index="1" disallow="pedestrian" speed="13.89" length="92.80" shape="100.00,301.60 7.20,301.60"/>
+    </edge>
+
+    <tlLogic id="A3" type="static" programID="0" offset="0">
+        <phase duration="42" state="GrrGr"/>
+        <phase duration="3"  state="yrryr"/>
+        <phase duration="37" state="rgGrG"/>
+        <phase duration="5"  state="rgGrr"/>
+        <phase duration="3"  state="ryyrr"/>
+    </tlLogic>
+
+    <junction id="A2" type="priority" x="0.00" y="200.00" incLanes="A3A2_0" intLanes=":A2_0_0" shape="0.00,200.00 -3.20,200.00 0.00,200.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="A3" type="traffic_light" x="0.00" y="300.00" incLanes="A4A3_0 A4A3_1 B3A3_0 B3A3_1 A2A3_0 :A3_w1_0" intLanes=":A3_0_0 :A3_4_0 :A3_2_0 :A3_3_0 :A3_c0_0" shape="-5.20,307.20 5.20,307.20 5.42,306.09 5.70,305.70 6.09,305.42 6.59,305.26 7.20,305.20 7.20,300.00 4.98,299.78 4.20,299.50 3.64,299.11 3.31,298.61 3.20,298.00 -3.20,298.00 -3.72,301.43 -4.68,303.77 -5.05,305.21">
+        <request index="0" response="10000" foes="10100" cont="0"/>
+        <request index="1" response="11000" foes="11000" cont="1"/>
+        <request index="2" response="01001" foes="01001" cont="0"/>
+        <request index="3" response="10010" foes="10110" cont="0"/>
+        <request index="4" response="00000" foes="01011" cont="0"/>
+    </junction>
+    <junction id="A4" type="dead_end" x="0.00" y="400.00" incLanes="A3A4_0 A3A4_1" intLanes="" shape="0.00,400.00 5.20,400.00 0.00,400.00"/>
+    <junction id="B3" type="dead_end" x="100.00" y="300.00" incLanes="" intLanes="" shape="100.00,300.00 100.00,305.20"/>
+
+    <junction id=":A3_4_0" type="internal" x="2.88" y="303.20" incLanes=":A3_1_0" intLanes=":A3_3_0 :A3_c0_0"/>
+
+    <connection from="A2A3" to="A3A4" fromLane="0" toLane="1" via=":A3_3_0" tl="A3" linkIndex="3" dir="s" state="o"/>
+    <connection from="A3A2" to="A2A3" fromLane="0" toLane="0" via=":A2_0_0" dir="t" state="M"/>
+    <connection from="A4A3" to="A3A2" fromLane="1" toLane="0" via=":A3_0_0" tl="A3" linkIndex="0" dir="s" state="o"/>
+    <connection from="B3A3" to="A3A4" fromLane="1" toLane="1" via=":A3_1_0" tl="A3" linkIndex="1" dir="r" state="o"/>
+    <connection from="B3A3" to="A3A2" fromLane="1" toLane="0" via=":A3_2_0" tl="A3" linkIndex="2" dir="l" state="o"/>
+
+    <connection from=":A2_0" to="A2A3" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":A3_0" to="A3A2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":A3_1" to="A3A4" fromLane="0" toLane="1" via=":A3_4_0" dir="r" state="m"/>
+    <connection from=":A3_4" to="A3A4" fromLane="0" toLane="1" dir="r" state="m"/>
+    <connection from=":A3_2" to="A3A2" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":A3_3" to="A3A4" fromLane="0" toLane="1" dir="s" state="M"/>
+
+    <connection from=":A3_c0" to=":A3_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":A3_w0" to="A3A2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="A2A3" to=":A3_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="A4A3" to=":A3_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":A3_w1" to=":A3_c0" fromLane="0" toLane="0" tl="A3" linkIndex="4" dir="s" state="M"/>
+    <connection from=":A3_w1" to="A3A4" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="B3A3" to=":A3_w1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":A4_w0" to="A4A3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="A3A4" to=":A4_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+</net>
